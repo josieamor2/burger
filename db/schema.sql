@@ -7,6 +7,6 @@ CREATE TABLE burgers
 (
 	id int NOT NULL AUTO_INCREMENT,
 	burger_name CHAR(100),
-    devoured BOOLEAN,
+    devoured BOOLEAN NOT NULL,
 	PRIMARY KEY (id)
 );
