@@ -26,8 +26,8 @@ if(process.env.JAWSDB_URL){
 
 }else{
   connection = mysql.createConnection({
-    host: '	g9fej9rujq0yt0cd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-    user:'	y4673bae2rq1pe8y',
+    host: 'g9fej9rujq0yt0cd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    user: 'y4673bae2rq1pe8y',
     password: 'kygb5tg9tycaw1xc'
   })
 }
