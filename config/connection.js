@@ -18,16 +18,21 @@ connection.connect(function(err) {
   console.log('connected as id ' + connection.threadId);
 });
 
+var connection;
+if(process.env.JAWSDB_URL) {
+  //Heroku deployment
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  //local host
+    connection = mysql.createConnection({
+        root: 3000,
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "db_name",
+    });
+};
+
 // Export connection for our ORM to use.
 module.exports = connection;
 
-if(process.env.JAWSDB_URL){
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-
-}else{
-  connection = mysql.createConnection({
-    host: 'g9fej9rujq0yt0cd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-    user: 'y4673bae2rq1pe8y',
-    password: 'kygb5tg9tycaw1xc'
-  })
-}
